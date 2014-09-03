@@ -51,6 +51,27 @@ $(function() {
         }, 'json');
     });
 
+    $(document).keypress(function(event) {
+        if (event.which == 13) {
+            var content = $('.message-input').find('[name="content"]').val();
+            var customID = $('.message-box').find('input[name="customID"]').val();
+            if (content == '' || customID == '') {
+                return;
+            }
+            $.post('/chat/new/server/', {
+                'content': content,
+                'customID': customID,
+            }, function(data) {
+                if (data['success']) {
+                    $('.message-box').append('<p class="leftMessage">' + content + '</p>');
+                    $('.message-input').find('[name="content"]').val('');
+                } else {
+                    alert(data['wrong']);
+                }
+            }, 'json');
+        }
+    });
+
     function getNewMessage() {
         var customID = $('.message-box').find('input[name="customID"]').val();
         if (!customID) {
