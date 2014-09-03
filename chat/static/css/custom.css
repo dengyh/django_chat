@@ -1,0 +1,76 @@
+html, body {
+    width: 100%;
+    font-family: "微软雅黑";
+    background-color: rgb(50,50,50);
+}
+
+.custom-button {
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    z-index: 50;
+}
+
+.button-background {
+    width: 100%;
+    height: 100%;
+    background-color: #1ABC9C;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.button-tip {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(217,81,79);
+    border-radius: 100%;
+    display: none;
+}
+
+.custom-dashboard {
+    position: fixed;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 100px;
+    min-height: 500px;
+    background-color: rgb(240,240,240);
+    border-radius: 10px;
+    z-index: 50;
+    display: none;
+}
+
+.custom-dashboard form {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.message-input {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin-left: 5%;
+    padding: 20px;
+}
+
+.message-box {
+    width: 90%;
+    height: 400px;
+    margin-left: 5%;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.leftMessage {
+    text-align: left;
+    font-size: 20px;
+}
+
+.rightMessage {
+    text-align: right;
+    font-size: 20px;
+}

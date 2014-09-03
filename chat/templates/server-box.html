@@ -1,0 +1,8 @@
+<input type="hidden" name="customID" value="{{customID}}">
+{% for item in messages %}
+{% ifequal item.type "custom" %}
+<p class="rightMessage">{{item.content}}</p>
+{% else %}
+<p class="leftMessage">{{item.content}}</p>
+{% endifequal %}
+{% endfor %}

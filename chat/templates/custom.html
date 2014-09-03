@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom Demo</title>
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+    </head>
+    <body>
+        <div class="custom-button">
+            <div class="button-background"></div>
+            <div class="button-tip"></div>
+        </div>
+        <div class="custom-dashboard">
+        {% if custom %}
+            <input type="hidden" name="id" value="{{custom.id}}">
+            <input type="hidden" name="name" value="{{custom.name}}">
+            <input type="hidden" name="phone" value="{{custom.phone}}">
+            <div class="message-box">
+            {% for item in messages %}
+            {% ifequal item.type "custom" %}
+            <p class="leftMessage">{{item.content}}</p>
+            {% else %}
+            <p class="rightMessage">{{item.content}}</p>
+            {% endifequal %}
+            {% endfor %}
+            </div>
+            <div class="message-input">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="content">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" id="send-message" type="button">输入</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <form role="form" id="contact-form">
+                <div class="form-group">
+                    <label for="custom-name">客户名</label>
+                    <input id="custom-name" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="custom-phone">联系电话</label>
+                    <input id="custom-phone" class="form-control" name="phone">
+                </div>
+                <button class="btn btn-default" id="contact-button">联系客服</button>
+            </form>
+        {% endif %}
+        </div>
+        <script src="/static/jquery/jquery-1.11.1.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/js/custom.js"></script>
+    </body>
+</html>
+    

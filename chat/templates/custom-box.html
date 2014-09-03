@@ -1,0 +1,29 @@
+{% if custom %}
+<input type="hidden" name="id" value="{{custom.id}}">
+<input type="hidden" name="name" value="{{custom.name}}">
+<input type="hidden" name="phone" value="{{custom.phone}}">
+<div class="message-box">
+</div>
+<div class="message-input">
+    <div class="row">
+        <div class="input-group">
+            <input type="text" class="form-control" name="content">
+            <span class="input-group-btn">
+                <button class="btn btn-default" id="send-message" type="button">输入</button>
+            </span>
+        </div>
+    </div>
+</div>
+{% else %}
+<form role="form" id="contact-form">
+    <div class="form-group">
+        <label for="custom-name">客户名</label>
+        <input id="custom-name" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+        <label for="custom-phone">联系电话</label>
+        <input id="custom-phone" class="form-control" name="phone">
+    </div>
+    <button class="btn btn-default" id="contact-button">联系客服</button>
+</form>
+{% endif %}
